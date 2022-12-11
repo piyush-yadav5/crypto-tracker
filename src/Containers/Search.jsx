@@ -1,11 +1,42 @@
 import { Container } from '@mui/material'
-import React, {useState} from 'react'
+import axios from 'axios';
+import React, {useEffect, useState} from 'react'
+import { CoinList } from '../Config/api';
+import { CryptoState } from '../CurrencyContext';
 import CoinsTable from './CoinsTable';
 
+//handle Search here and pass filtered array to coin table
 
 const Search = () => {
 
-    const [input, setInput] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const {currency} = CryptoState();
+
+    const [coins, setCoins] = useState([]);
+
+    const [filterCoins, setFilterCoins] = useState([]);
+
+    useEffect(() => {
+        const fetchCoins = async () => {
+            setLoading(true);
+            const {data} = await axios.get(CoinList(currency));
+            setCoins(data);
+            setFilterCoins(data);
+            setLoading(false);
+        }
+        fetchCoins();
+    },[currency])
+
+    const handleSearch = (input) => {
+        return coins.filter(
+          (coin) =>
+            coin.name.toLowerCase().includes(input) ||
+            coin.symbol.toLowerCase().includes(input)
+        );
+      };
+
+    console.log("filterCoins",filterCoins);
 
     return (
         <Container>
@@ -22,11 +53,11 @@ const Search = () => {
                         type="text"
                         id="search"
                         placeholder="Search Your Currency"
-                        onChange={(e)=>setInput(e.target.value)} />
+                        onChange={(e)=>setFilterCoins(handleSearch(e.target.value))} />
                 </div>
             </div>
             <br/> <br/>
-            <CoinsTable search={input} />
+            <CoinsTable filtered={filterCoins} loading={loading} />
         </Container>
     )
 }

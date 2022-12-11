@@ -1,43 +1,20 @@
 import { LinearProgress, Container } from '@mui/material'
-import axios from 'axios';
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { numberWithCommas } from '../App';
-import { CoinList } from '../Config/api';
 import { CryptoState } from '../CurrencyContext';
 import Pagination from './Pagination';
 
-const CoinsTable = ({search}) => {
+const CoinsTable = ({filtered, loading}) => {
 
 
-    const { currency, symbol } = CryptoState();
-
-    const [loading, setLoading] = useState(false);
-
-    const [coins, setCoins] = useState([]);
+    const { symbol } = CryptoState();
 
     const [currentPage, setCurrentPage] = useState(1);
 
     const [dataPerPage] = useState(10);
 
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const fetchCoins = async () => {
-            setLoading(true);
-            const { data } = await axios.get(CoinList(currency));
-            setCoins(data);
-            setLoading(false);
-        }
-        fetchCoins();
-    }, [currency])
-
-    const handleSearch = (search) => {
-        return coins.filter(
-            (coin) =>
-                (coin.name.toLowerCase().includes(search) || coin.symbol.toLowerCase().includes(search))
-            );
-    };
 
     const paginate = (pgNumber) => {
         setCurrentPage(pgNumber);
@@ -46,8 +23,8 @@ const CoinsTable = ({search}) => {
     const indexOfLastPage = currentPage * dataPerPage;
     const indexOfFirstPage = indexOfLastPage - dataPerPage;
 
-    const renderTable = (search) => (
-        handleSearch(search).slice(indexOfFirstPage, indexOfLastPage).map((coin)=>{
+    const renderTable = () => (
+        filtered.slice(indexOfFirstPage, indexOfLastPage).map((coin)=>{
             const change = coin.price_change_percentage_24h;
             let profit = false;
             if(change>0){profit = true;}
@@ -92,13 +69,13 @@ const CoinsTable = ({search}) => {
                             </tr>
                         </thead>
                         <tbody>
-                                {renderTable(search)}
+                                {renderTable()}
                         </tbody>
                     </table>
                 }
 
             </div>
-            <Pagination totalCount={(coins.length/10).toFixed(0)} paginate={paginate} />
+            <Pagination totalCount={(filtered.length/10).toFixed(0)} paginate={paginate} />
         </Container>
     )
 }
