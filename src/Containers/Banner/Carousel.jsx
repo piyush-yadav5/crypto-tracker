@@ -55,7 +55,7 @@ const Carousel = () => {
                     }
                 </span>
                 <div className="text-white text-xl font-Montserrat font-medium text-center">
-                    {symbol} {numberWithCommas(coin.current_price.toFixed(2))}
+                    {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
                 </div>
                 </div>
                 </div>

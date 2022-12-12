@@ -38,7 +38,7 @@ const CoinsTable = ({ filtered, loading }) => {
                         </div>
                     </td>
                     <td align='right'>
-                        <span className="text-white font-Montserrat text-sm sm:text-lg "> {symbol} {" "} {numberWithCommas(coin.current_price.toFixed(2))} </span>
+                        <span className="text-white font-Montserrat text-sm sm:text-lg "> {symbol} {" "} {numberWithCommas(coin?.current_price.toFixed(2))} </span>
                     </td>
                     <td align='right' className="pr-7">
                         {profit ? <span className="text-green text-sm sm:text-lg font-Montserrat">+{change}%</span>
@@ -46,7 +46,7 @@ const CoinsTable = ({ filtered, loading }) => {
                     </td>
                     <td align='right' className="pr-14">
                         <span className="text-white font-Montserrat text-sm sm:text-lg">{symbol} {" "} {numberWithCommas(
-                            coin.market_cap.toString().slice(0, -6)
+                            coin?.market_cap.toString().slice(0, -6)
                         )}
                             M </span>
                     </td>
