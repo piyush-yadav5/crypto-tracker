@@ -26,10 +26,13 @@ const Sidebar = ({ id }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const currentPrice = coin?.market_data.current_price[currency.toLowerCase()] || '';
+
+    const marketCap = (coin?.market_data.market_cap[currency.toLowerCase()]) || '';
 
     return (
         <>
-        { loading ? <LinearProgress className='bg-gold w-1/3' /> :
+        { loading ? <LinearProgress className='bg-gold' /> :
         <div className='mt-7 lg:w-1/3 sm:w-full flex flex-col items-center border-r-2 lg:border-gold pr-3'>
 
             <img src={coin?.image.large} alt={coin?.name} className="h-52 mb-5" />
@@ -37,22 +40,17 @@ const Sidebar = ({ id }) => {
             <Typography dangerouslySetInnerHTML={{ __html: (coin?.description.en.split(". ")[0]) }} className="text-white text-lg leading-normal font-Montserrat font-normal ml-6" />
             <div className="self-start p-6">
                 <span className='flex pb-7'>
-                <span className=" text-white font-Montserrat text-3xl font-extrabold">Rank: </span>&nbsp;&nbsp;&nbsp;
-                <span className="text-white font-Montserrat text-3xl font-normal">{coin?.market_cap_rank}</span>
+                <span className=" text-white font-Montserrat text-2xl font-extrabold">Rank: </span>&nbsp;&nbsp;&nbsp;
+                <span className="text-white font-Montserrat text-2xl font-normal">{coin?.market_cap_rank}</span>
                 </span>
-                {/* <span className='flex pb-7'>
-                <span className=" text-white font-Montserrat text-3xl font-extrabold">Current price: </span>&nbsp;&nbsp;&nbsp;
-                <span className="text-white font-Montserrat text-3xl font-normal">{symbol }{" "}{numberWithCommas(
-                coin?.market_data.current_price[currency.toLowerCase()]
-              )}</span>
-                </span> */}
-                {/* <span className='flex pb-7'>
-                <span className=" text-white font-Montserrat text-3xl font-extrabold">Market Cap: </span>&nbsp;&nbsp;&nbsp;
-                <span className="text-white font-Montserrat text-3xl font-normal">{symbol }{" "}{numberWithCommas(
-                coin?.market_data.market_cap[currency.toLowerCase()]
-                  
-              )}M</span>
-                </span> */}
+                <span className='flex pb-7'>
+                <span className=" text-white font-Montserrat text-2xl font-extrabold">Current price: </span>&nbsp;&nbsp;&nbsp;
+                <span className="text-white font-Montserrat text-2xl font-normal">{symbol }{" "}{numberWithCommas(currentPrice)}</span>
+                </span>
+                <span className='flex pb-7'>
+                <span className=" text-white font-Montserrat text-2xl font-extrabold">Market Cap: </span>&nbsp;&nbsp;&nbsp;
+                <span className="text-white font-Montserrat text-2xl font-normal">{symbol }{" "}{numberWithCommas(marketCap.toString().slice(0,-6))} M</span>
+                </span>
             </div>
         </div>
         }
