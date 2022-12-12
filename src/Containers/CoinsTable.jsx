@@ -1,11 +1,11 @@
 import { LinearProgress, Container } from '@mui/material'
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { numberWithCommas } from '../App';
 import { CryptoState } from '../CurrencyContext';
 import Pagination from './Pagination';
 
-const CoinsTable = ({filtered, loading}) => {
+const CoinsTable = ({ filtered, loading }) => {
 
 
     const { symbol } = CryptoState();
@@ -24,58 +24,58 @@ const CoinsTable = ({filtered, loading}) => {
     const indexOfFirstPage = indexOfLastPage - dataPerPage;
 
     const renderTable = () => (
-        filtered.slice(indexOfFirstPage, indexOfLastPage).map((coin)=>{
+        filtered.slice(indexOfFirstPage, indexOfLastPage).map((coin) => {
             const change = coin.price_change_percentage_24h;
             let profit = false;
-            if(change>0){profit = true;}
-            return(
-                <tr className="cursor-pointer hover:scale-105 hover:translate-x-6 hover:rounded-lg hover:bg-hoverBackground transition-all" onClick={()=>navigate(`/coins/${coin.id}`)}>
-                    <td  className="flex gap-x-16 mb-8 mt-4 pl-4">
-                    <img src={coin.image} alt={coin.name} className="h-14" />
-                    <div className="flex flex-col">
-                    <span className="text-white uppercase font-Montserrat text-xl font-semibold">{coin.symbol}</span>
-                    <span className="text-white font-Montserrat text-lg">{coin.name}</span>
-                    </div>
+            if (change > 0) { profit = true; }
+            return (
+                <tr className="cursor-pointer hover:scale-105 hover:translate-x-4 hover:rounded-lg hover:bg-hoverBackground transition-all" onClick={() => navigate(`/coins/${coin.id}`)}>
+                    <td className="flex mb-8 mt-4 pl-4 pr-10 gap-5" align='left'>
+                        <img src={coin.image} alt={coin.name} className="h-14" />
+                        <div className="flex flex-col">
+                            <span className="text-white uppercase font-Montserrat text-xl font-semibold">{coin.symbol}</span>
+                            <span className="text-white font-Montserrat text-lg">{coin.name}</span>
+                        </div>
                     </td>
-                    <td >
-                       <span className="text-white font-Montserrat text-lg"> {symbol }{numberWithCommas(coin.current_price.toFixed(2))} </span>
+                    <td align='right'>
+                        <span className="text-white font-Montserrat text-sm sm:text-lg "> {symbol} {" "} {numberWithCommas(coin.current_price.toFixed(2))} </span>
                     </td>
-                    <td >
-                        {profit ? <span className="text-green text-xl font-Montserrat">+{change}%</span>
-                        : <span className="text-red text-xl font-Montserrat">{change}%</span>}
+                    <td align='right' className="pr-7">
+                        {profit ? <span className="text-green text-sm sm:text-lg font-Montserrat">+{change}%</span>
+                            : <span className="text-red text-sm sm:text-lg font-Montserrat">{change}%</span>}
                     </td>
-                    <td >
-                        <span className="text-white font-Montserrat text-lg">{symbol } {numberWithCommas(
+                    <td align='right' className="pr-12">
+                        <span className="text-white font-Montserrat text-sm sm:text-lg">{symbol} {" "} {numberWithCommas(
                             coin.market_cap.toString().slice(0, -6)
-                          )}
-                          M </span>
+                        )}
+                            M </span>
                     </td>
                 </tr>
             );
         })
     )
     return (
-            <Container>
-            <div className="overflow-x-hidden relative sm:rounded-lg">
+        <Container>
+            <div className="overflow-x-auto sm:rounded-lg">
                 {loading ? <LinearProgress className="bg-gold" />
                     :
-                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-40">
+                    <table className=" table-auto w-full text-gray-500 dark:text-gray-40">
                         <thead className="bg-gold text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" className="py-3 px-6 font-Montserrat text-lg">Coin</th>
-                                <th scope="col" className="py-3 px-6 font-Montserrat text-lg">Price</th>
-                                <th scope="col" className="py-3 px-6 font-Montserrat text-lg">24h Change</th>
-                                <th scope="col" className="py-3 px-6 font-Montserrat text-lg">Market Value</th>
+                            <tr className="">
+                                <th scope="col" className="py-3 px-6 font-Montserrat text-lg" align='left'>Coin</th>
+                                <th scope="col" className="py-3 px-6 font-Montserrat text-lg" align='right'>Price</th>
+                                <th scope="col" className="py-3 px-6 font-Montserrat text-lg" align='right'>24h Change</th>
+                                <th scope="col" className="py-3 px-6 font-Montserrat text-lg" align='right'>Market Value</th>
                             </tr>
                         </thead>
                         <tbody>
-                                {renderTable()}
+                            {renderTable()}
                         </tbody>
                     </table>
                 }
 
             </div>
-            <Pagination totalCount={(filtered.length/10).toFixed(0)} paginate={paginate} />
+            <Pagination totalCount={(filtered.length / 10).toFixed(0)} paginate={paginate} />
         </Container>
     )
 }
