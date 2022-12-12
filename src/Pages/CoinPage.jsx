@@ -1,8 +1,14 @@
+import { Container } from '@mui/material'
 import React from 'react'
+import Chart from '../Containers/Chart'
+import Sidebar from '../Containers/Sidebar'
 
 const CoinPage = () => {
   return (
-    <div>CoinPage</div>
+    <Container>
+    <Sidebar />
+    <Chart />
+    </Container>
   )
 }
 

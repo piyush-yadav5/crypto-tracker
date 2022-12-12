@@ -53,7 +53,7 @@ const Search = () => {
                         type="text"
                         id="search"
                         placeholder="Search Your Currency"
-                        onChange={(e) => setFilterCoins(handleSearch(e.target.value))} />
+                        onChange={(e) => setFilterCoins(handleSearch((e.target.value).toLowerCase()))} />
                 </div>
             </div>
             <br /> <br />

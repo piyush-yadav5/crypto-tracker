@@ -8,7 +8,7 @@ import CoinPage from './Pages/CoinPage'
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="bg-background">
+      <div className="bg-background min-h-screen pb-1">
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} exact />
