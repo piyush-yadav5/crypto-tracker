@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2';
 import { HistoricalChart } from '../Config/api';
 import { CryptoState } from '../CurrencyContext';
-import { Chart as ChartJS } from 'chart.js/auto'
-import { Chart } from 'react-chartjs-2'
 
 const DisplayChart = ({ coin, id }) => {
 
@@ -25,7 +23,7 @@ const DisplayChart = ({ coin, id }) => {
             setLoading(false);
         }
         fetchHistoricalData();
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [days])
     console.log(historicalData);
     return (

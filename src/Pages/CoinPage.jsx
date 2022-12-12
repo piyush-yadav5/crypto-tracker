@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { SingleCoin } from '../Config/api'
 import DisplayChart from '../Containers/DisplayChart'
-import Chart from '../Containers/DisplayChart'
 import Sidebar from '../Containers/Sidebar'
 
 const CoinPage = () => {
