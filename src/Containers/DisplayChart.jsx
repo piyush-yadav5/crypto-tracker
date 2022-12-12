@@ -18,6 +18,8 @@ const DisplayChart = ({ coin, id }) => {
 
     const { currency } = CryptoState();
 
+    const [buttonSelected, setButtonSelected] = useState(1);
+
     useEffect(() => {
         const fetchHistoricalData = async () => {
             setLoading(true);
@@ -28,6 +30,11 @@ const DisplayChart = ({ coin, id }) => {
         fetchHistoricalData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [days])
+
+    const setDaysHandler = (day) =>{
+        setDays(day);
+        setButtonSelected(day);
+    }
 
     return (
         <div className="lg:w-3/4 flex flex-col items-center justify-center lg:mt-7 p-10 max-md:w-full max-md:p-2">
@@ -57,8 +64,9 @@ const DisplayChart = ({ coin, id }) => {
                                 },
                             },
                         }} />
-
-                        {/* <DaySelector /> */}
+                        <div className="mt-6">
+                        <DaySelector clicked={setDaysHandler} buttonSelected={buttonSelected} />
+                        </div>
                 </>
             )}
         </div>
