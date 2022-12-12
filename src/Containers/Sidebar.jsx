@@ -12,7 +12,7 @@ const Sidebar = ({ coin, loading }) => {
 
     return (
         <>
-        { loading ? (<LinearProgress className='bg-gold w-full' />) :<div className='mt-7 lg:w-1/3 sm:w-full flex flex-col items-center border-r-2 lg:border-gold pr-3'>
+        { loading ? (<LinearProgress className='bg-gold w-full' />) :<div className='mt-7 lg:w-1/3 sm:w-full flex flex-col items-center lg:border-r-2 lg:border-gold lg:bo pr-3'>
 
             <img src={coin?.image.large} alt={coin?.name} className="h-52 mb-5 max-sm:h-36" />
             <Typography variant='h3' className="text-white font-Montserrat font-extrabold">{coin?.name}</Typography><br />
