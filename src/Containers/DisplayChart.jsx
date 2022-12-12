@@ -4,6 +4,9 @@ import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2';
 import { HistoricalChart } from '../Config/api';
 import { CryptoState } from '../CurrencyContext';
+import { Chart as ChartJS } from 'chart.js/auto'
+import { Chart }            from 'react-chartjs-2'
+import DaySelector from './DaySelector';
 
 const DisplayChart = ({ coin, id }) => {
 
@@ -25,9 +28,9 @@ const DisplayChart = ({ coin, id }) => {
         fetchHistoricalData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [days])
-    console.log(historicalData);
+
     return (
-        <div className="lg:w-3/4 flex flex-col items-center justify-center lg:mt-7 lg:p-10 max-md:w-full max-md:p-3">
+        <div className="lg:w-3/4 flex flex-col items-center justify-center lg:mt-7 p-10 max-md:w-full max-md:p-2">
             {loading ? (<CircularProgress size={250} thickness={1} style={{ color: "gold" }} />) : (
                 <>
                     <Line
@@ -54,6 +57,8 @@ const DisplayChart = ({ coin, id }) => {
                                 },
                             },
                         }} />
+
+                        {/* <DaySelector /> */}
                 </>
             )}
         </div>
