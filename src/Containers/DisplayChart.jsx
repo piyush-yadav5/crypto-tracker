@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2';
 import { HistoricalChart } from '../Config/api';
 import { CryptoState } from '../CurrencyContext';
-import { Chart as ChartJS } from 'chart.js/auto'
-import { Chart }            from 'react-chartjs-2'
+import 'chart.js/auto'
+
 import DaySelector from './DaySelector';
 
 const DisplayChart = ({ coin, id }) => {
