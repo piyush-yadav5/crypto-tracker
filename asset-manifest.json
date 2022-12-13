@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/crypto-tracker/static/css/main.a8d8e97f.css",
+    "main.js": "/crypto-tracker/static/js/main.8f1aafdd.js",
+    "static/media/endless-constellation.svg": "/crypto-tracker/static/media/endless-constellation.937b6fedabb7fc28f0b7.svg",
+    "index.html": "/crypto-tracker/index.html",
+    "main.a8d8e97f.css.map": "/crypto-tracker/static/css/main.a8d8e97f.css.map",
+    "main.8f1aafdd.js.map": "/crypto-tracker/static/js/main.8f1aafdd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8d8e97f.css",
+    "static/js/main.8f1aafdd.js"
+  ]
+}
