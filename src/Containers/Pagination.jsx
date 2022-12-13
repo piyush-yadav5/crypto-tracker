@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Pagination } from '@mui/material'
 
 const PaginationFunc = ({totalCount, paginate}) => {
+
+  useEffect(()=>{
+    paginate(1);
+    // eslint-disable-next-line
+  },[totalCount])
     
   return (
     <Pagination 
