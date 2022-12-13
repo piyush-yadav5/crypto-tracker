@@ -24,10 +24,9 @@ const Header = () => {
       <AppBar color="transparent" position="static">
         <Container>
         <Toolbar>
+          <div className="flex justify-between w-full">
           <Typography variant="h5"
-           component="div"
-            sx={{ flexGrow: 1 }}
-             className="text-gold font-Montserrat font-bold z-40 cursor-pointer"
+             className="text-gold font-Montserrat font-bold z-40 cursor-pointer mt-3"
              onClick={()=>navigate('/')} >
             Crypto Tracker
           </Typography>
@@ -45,6 +44,7 @@ const Header = () => {
             <MenuItem value={"INR"}>INR</MenuItem>
           </Select>
           </FormControl>
+          </div>
         </Toolbar>
         </Container>
       </AppBar>

@@ -65,7 +65,7 @@ const Carousel = () => {
 
   return (
     <Container>
-    <div className="flex-col h-1/2 items-center">
+    <div className="h-1/2 items-center">
     <AliceCarousel 
     mouseTracking
     infinite
@@ -75,7 +75,8 @@ const Carousel = () => {
     disableDotsControls
     responsive={responsive}
     items={items}
-    autoPlay />
+    autoPlay
+     />
     </div>
     </Container>
   )
