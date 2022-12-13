@@ -12,7 +12,7 @@ const DaySelector = ({clicked, buttonSelected}) => {
         <Stack spacing={2} direction="row">
             {
                 chartDays.map((day) => (
-                    <button className={buttonSelected===day.value ? selectedStyle : style} type="button"
+                    <button key={day.value} className={buttonSelected===day.value ? selectedStyle : style} type="button"
                     onClick={() => {clicked(day.value)}}
                     >
                         {day.label}

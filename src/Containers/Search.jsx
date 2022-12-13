@@ -36,8 +36,6 @@ const Search = () => {
         );
     };
 
-    console.log("filterCoins", filterCoins);
-
     return (
         <Container>
             <div className='w-fill mx-auto'>

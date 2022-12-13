@@ -29,7 +29,7 @@ const CoinsTable = ({ filtered, loading }) => {
             let profit = false;
             if (change > 0) { profit = true; }
             return (
-                <tr className="cursor-pointer hover:scale-105 hover:translate-x-2 hover:drop-shadow-2xl hover:bg-hoverBackground transition-all" onClick={() => navigate(`/coins/${coin.id}`)}>
+                <tr key={coin.id} className="cursor-pointer hover:scale-105 hover:translate-x-2 hover:drop-shadow-2xl hover:bg-hoverBackground transition-all" onClick={() => navigate(`/coins/${coin.id}`)}>
                     <td className="flex mb-8 mt-4 pl-6 pr-10 gap-5" align='left'>
                         <img src={coin.image} alt={coin.name} className="h-10 sm:h-14" />
                         <div className="flex flex-col">
@@ -75,7 +75,7 @@ const CoinsTable = ({ filtered, loading }) => {
                 }
 
             </div>
-            <Pagination totalCount={(filtered.length / 10).toFixed(0)} paginate={paginate} />
+            <Pagination totalCount={(filtered.length / 10)} paginate={paginate} />
         </Container>
     )
 }
