@@ -56,7 +56,7 @@ const CoinsTable = ({ filtered, loading }) => {
     )
     return (
         <Container>
-            <div className="overflow-x-auto sm:rounded-lg">
+            <div className="overflow-x-auto lg:overflow-x-hidden sm:rounded-lg scrollbar-hide">
                 {loading ? <LinearProgress className="bg-gold" />
                     :
                     <table className=" table-auto w-full text-gray-500 dark:text-gray-40">

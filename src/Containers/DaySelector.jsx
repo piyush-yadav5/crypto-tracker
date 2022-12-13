@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
 import { chartDays } from '../Config/data'
 
 const DaySelector = ({clicked, buttonSelected}) => {
