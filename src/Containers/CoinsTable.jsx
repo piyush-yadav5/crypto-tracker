@@ -75,7 +75,7 @@ const CoinsTable = ({ filtered, loading }) => {
                 }
 
             </div>
-            <Pagination totalCount={(filtered.length / 10)} paginate={paginate} />
+            <Pagination totalCount={Math.floor(filtered.length / 10)} paginate={paginate} />
         </Container>
     )
 }
