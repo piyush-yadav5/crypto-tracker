@@ -27,7 +27,7 @@ const Header = () => {
           <div className="flex justify-between w-full">
           <Typography variant="h5"
              className="text-gold font-Montserrat font-bold z-40 cursor-pointer mt-3"
-             onClick={()=>navigate('/crypto-tracker')} >
+             onClick={()=>navigate('/')} >
             Crypto Tracker
           </Typography>
           <FormControl>

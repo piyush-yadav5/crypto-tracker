@@ -11,7 +11,7 @@ const App = () => {
       <div className="bg-background min-h-screen pb-1">
         <Header />
         <Routes>
-          <Route path='/crypto-tracker' element={<HomePage />} exact />
+          <Route path='/' element={<HomePage />} exact />
           <Route path='/coins/:id' element={<CoinPage />} />
         </Routes>
       </div>
