@@ -2,7 +2,7 @@
 
 An application which tracks the real-time data of over 100+ crypto-currencies made possible with the help of free [Coin Gecko Api](https://www.coingecko.com/en/api/documentation).<br/>
 [See the app for yourself!](https://piyush-yadav5.github.io/crypto-tracker/)<br/>
-![](https://drive.google.com/file/d/1OjEzNrhgt2E55ufgyXAAe_QHyBcY9Lm1/view?usp=share_link)
+![](https://github.com/piyush-yadav5/crypto-tracker/blob/main/public/Cypto_Info.gif)
 
 ## Features
 
