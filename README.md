@@ -1,7 +1,8 @@
 # Crypto Currency Tracker
 
-An application which tracks the real-time data of over 100+ crypto-currencies made possible with the help of free [Coin Gecko Api](https://www.coingecko.com/en/api/documentation).
-[See the app for yourself!](https://piyush-yadav5.github.io/crypto-tracker/)
+An application which tracks the real-time data of over 100+ crypto-currencies made possible with the help of free [Coin Gecko Api](https://www.coingecko.com/en/api/documentation).<br/>
+[See the app for yourself!](https://piyush-yadav5.github.io/crypto-tracker/)<br/>
+![](https://github.com/piyush-yadav5/crypto-tracker/blob/main/public/Cypto_Info.gif)
 
 ## Features
 
