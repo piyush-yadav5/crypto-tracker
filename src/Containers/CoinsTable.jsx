@@ -60,7 +60,7 @@ const CoinsTable = ({ filtered, loading }) => {
                 {loading ? <LinearProgress className="bg-gold" />
                     :
                     <table className=" table-auto w-full text-gray-500 dark:text-gray-40">
-                        <thead className="bg-gold text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <thead className="bg-gold text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" className="py-3 px-6 font-Montserrat text-lg" align='left'>Coin</th>
                                 <th scope="col" className="py-3 px-6 font-Montserrat text-lg" align='right'>Price</th>

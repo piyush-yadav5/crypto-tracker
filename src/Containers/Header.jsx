@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }} className=" h-20 pt-3">
-      <AppBar color="transparent" position="static">
+      <AppBar className="bg-transparent" position="static">
         <Container>
         <Toolbar>
           <div className="flex justify-between w-full">

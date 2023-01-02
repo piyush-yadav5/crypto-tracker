@@ -28,5 +28,22 @@ and (min-device-width : 768px) {
   }
 }
 
+.link-underline {
+  padding-bottom: 3px;
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(gold, gold);
+  background-size: 0 3px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease-in-out;
+}
+
+.link-underline:hover {
+  margin-top: 5px;
+  background-size: 100% 3px;
+  background-position: 0 100%
+}
+
+
 
 

@@ -2,11 +2,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="text-center bg-gray-900 text-white">
+    <footer className="text-center bg-transparent text-white">
   <div className="flex justify-center w-full px-6 pt-6">
     <div>
 
-      <a href="https://www.linkedin.com/in/piyush-yadav-a2590416a/" target="_blank" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-gold focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      <a href="https://www.linkedin.com/in/piyush-yadav-a2590416a/" target="_blank" rel="noreferrer" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-gold focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
         <svg aria-hidden="true"
         focusable="false"
         data-prefix="fab"
@@ -23,7 +23,7 @@ const Footer = () => {
         </svg>
       </a>
 
-      <a href="https://github.com/piyush-yadav5/crypto-tracker" target="_blank" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-gold focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      <a href="https://github.com/piyush-yadav5/crypto-tracker" target="_blank" rel="noreferrer" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-gold focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
         <svg aria-hidden="true"
         focusable="false"
         data-prefix="fab"
@@ -43,7 +43,7 @@ const Footer = () => {
   </div>
 
   <div className="text-center pb-4" >
-    Made with&nbsp;❤️&nbsp;by<span className='text-gold'> Piyush Yadav</span>
+    Made with&nbsp;❤️&nbsp;by <a href='https://github.com/piyush-yadav5' target="_blank" rel='noreferrer' className="link-underline">Piyush Yadav</a>
   </div>
 </footer>
   )

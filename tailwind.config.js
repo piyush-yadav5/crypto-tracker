@@ -3,13 +3,6 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   important: "#root",
   theme: {
-    colors: {
-      white: '#fff',
-      gold: '#FFD700',
-      red: '#F4210F',
-      green: '#37DA2F',
-      backCol: '#14161a',
-    },
     extend: {
       backgroundImage: {
         'hero-pattern': "url('../public/endless-constellation.svg')",
@@ -19,6 +12,13 @@ module.exports = {
       fontFamily: {
         Montserrat: ['Montserrat', 'sans-serif'],
        },
+       colors: {
+        white: '#fff',
+        gold: '#FFD700',
+        red: '#F4210F',
+        green: '#37DA2F',
+        backCol: '#14161a',
+      },
     },
   },
   plugins: [],

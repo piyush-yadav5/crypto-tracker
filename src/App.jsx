@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Header from './Containers/Header'
 import HomePage from './Pages/HomePage'
@@ -7,7 +7,7 @@ import CoinPage from './Pages/CoinPage'
 
 const App = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="bg-background min-h-screen pb-1">
         <Header />
         <Routes>
@@ -15,7 +15,7 @@ const App = () => {
           <Route path='/coins/:id' element={<CoinPage />} />
         </Routes>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
